@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState()
   const [searchKey, setSearchKey] = useState()
   const apiKey = 'b6033e5e'
-  const url = "http://www.omdbapi.com"
+  const url = "https://www.omdbapi.com"
   const fetchMovies = async () => {
     await fetch(`${url}?t=${searchKey}&apiKey=${apiKey}`).then((res) => {
       if (!res.ok) {
