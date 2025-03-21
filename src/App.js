@@ -2,7 +2,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-import { Grid, Card, Typography, Input } from '@mui/joy'
+import { Grid, Card, Typography, Input, FormLableAT } from '@mui/joy'
 function App() {
   const [data, setData] = useState()
   const [searchKey, setSearchKey] = useState()
@@ -21,23 +21,24 @@ function App() {
   }
   return (
     <Grid container>
-      <Grid sm={12} sx={{ marginTop: "10px" }}>
+      <Grid sm={12} sx={{ marginTop: "50px", marginBottom: "10px", marginLeft: "50px", marginRight: "50px" }}>
         <Input onChange={(e) => setSearchKey(e.target.value)} value={searchKey}
+          placeholder="Search Movies"
           onKeyUp={(e) => {
             if (e.key === 'Enter') {
               fetchMovies()
             }
           }}></Input>
       </Grid>
-      <Grid sm={4}>
+      <Grid sm={12} sx={{ marginLeft: "50px", marginRight: "50px" }}>
         <Card>
-          <Typography startDecorator="Title :">{data?.Title}</Typography>
-          <Typography startDecorator="Plot :">{data?.Plot}</Typography>
-          <Typography startDecorator="Poster :">
+          <Typography startDecorator="Title :" fontWeight="bold">{data?.Title}</Typography>
+          <Typography startDecorator="Plot :" fontWeight="bold">{data?.Plot}</Typography>
+          <Typography startDecorator="Poster :" fontWeight="bold">
 
             <img src={data?.Poster}></img>
           </Typography>
-          <Typography startDecorator="Actors :">{data?.Actors}</Typography>
+          <Typography startDecorator="Actors :" fontWeight="bold">{data?.Actors}</Typography>
         </Card>
       </Grid>
     </Grid>
