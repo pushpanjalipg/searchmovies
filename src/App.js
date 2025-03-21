@@ -34,6 +34,7 @@ function App() {
           <Typography startDecorator="Title :">{data?.Title}</Typography>
           <Typography startDecorator="Plot :">{data?.Plot}</Typography>
           <Typography startDecorator="Poster :">
+
             <img src={data?.Poster}></img>
           </Typography>
           <Typography startDecorator="Actors :">{data?.Actors}</Typography>
