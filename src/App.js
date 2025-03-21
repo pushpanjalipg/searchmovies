@@ -9,7 +9,7 @@ function App() {
   const apiKey = 'b6033e5e'
   const url = "http://www.omdbapi.com"
   const fetchMovies = async () => {
-    fetch(`${url}?t=${searchKey}&apiKey=${apiKey}`).then((res) => {
+    await fetch(`${url}?t=${searchKey}&apiKey=${apiKey}`).then((res) => {
       if (!res.ok) {
         throw new Error
       }
